@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Komunitas — Med-all</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <main>
+    <section id="view-komunitas" class="page-view active">
+      <div class="container" style="max-width: 820px;">
+        <div class="breadcrumb" onclick="navigateTo('beranda')">‹ Beranda / Komunitas</div>
+        <span class="eyebrow">KOMUNITAS MED-ALL</span>
+        <h1 class="section-title">Cerita kecil, dukungan yang berarti.</h1>
+        <p style="color:var(--text-secondary); margin-bottom:18px;">
+          Berbagi pengalaman tentang makan, bergerak, beristirahat, dan merawat keluarga. Karena perjalanan sehat tidak harus sendirian.
+        </p>
+
+        <button class="btn-outline" onclick="toggleNewThreadBox()" style="margin-bottom:20px;">+ Buat diskusi baru</button>
+
+        <div id="newThreadBox" class="card" style="display:none; margin-bottom:22px;">
+          <h3 style="font-size:1.3rem; margin-bottom:12px;">Tulis cerita atau pertanyaanmu</h3>
+          <div class="form-group">
+            <label class="form-label">Judul diskusi</label>
+            <input type="text" id="newThreadTitle" class="form-control" placeholder="Contoh: Belajar minum air lebih teratur di sela kerja">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Isi cerita</label>
+            <textarea id="newThreadBody" rows="3" class="form-control" placeholder="Bagikan pengalamanmu dengan hangat..."></textarea>
+          </div>
+          <button class="btn-primary" onclick="publishThread()">Terbitkan diskusi ↗</button>
+        </div>
+
+        <div id="communityFeed" style="display:flex; flex-direction:column; gap:14px;">
+          <div class="card" style="cursor:pointer;" onclick="navigateTo('detail-thread')">
+            <span class="eyebrow">KEBIASAAN SEHAT</span>
+            <h3 style="font-size:1.3rem; margin-bottom:6px;">Mulai jalan pagi 15 menit, siapa mau ikut?</h3>
+            <p class="article-meta">Rani · 12 balasan · 2 jam lalu</p>
+          </div>
+          <div class="card" style="cursor:pointer;" onclick="navigateTo('detail-thread')">
+            <span class="eyebrow">NUTRISI</span>
+            <h3 style="font-size:1.3rem; margin-bottom:6px;">Ide bekal sederhana untuk hari yang sibuk</h3>
+            <p class="article-meta">Dimas · 8 balasan · 4 jam lalu</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-detail-thread" class="page-view">
+      <div class="container" style="max-width: 780px;">
+        <div class="breadcrumb" onclick="navigateTo('komunitas')">‹ Kembali ke Komunitas</div>
+        <span class="eyebrow">KOMUNITAS / KEBIASAAN SEHAT</span>
+        <h1 class="section-title">Mulai jalan pagi 15 menit, siapa mau ikut?</h1>
+        <p class="article-meta" style="margin-bottom:16px;">Ruang berbagi pengalaman · Kebiasaan sehat · Bukan nasihat medis.</p>
+
+        <div class="card" style="margin-bottom:20px;">
+          <strong>Rani · Anggota komunitas</strong>
+          <p class="article-meta" style="margin-bottom:12px;">28 Oktober 2026 · 07.30</p>
+          <p style="margin-bottom:16px;">
+            Aku sedang mencoba rutin jalan sebelum kerja. Targetku sederhana: keluar rumah dan jalan santai 15 menit, tiga kali seminggu. Hari ini berhasil jalan di sekitar rumah dan rasanya menyenangkan bisa melihat matahari pagi!
+          </p>
+          <button class="btn-outline" id="supportBtn" onclick="incrementSupport()">Dukung · <span id="supportCount">24</span></button>
+        </div>
+
+        <h3 style="font-size:1.25rem; margin-bottom:12px;">Balasan anggota</h3>
+        <div id="threadReplies" style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;">
+          <div class="card">
+            <strong>Dimas</strong> <span class="article-meta">· 08.05 WIB</span>
+            <p style="margin-top:6px;">Aku menyiapkan sepatu dekat pintu malam sebelumnya. Biasanya mulai dari 5 menit dulu, jadi terasa lebih ringan. Semangat, Rani!</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <label class="form-label">Tambahkan dukunganmu</label>
+          <textarea id="replyInput" rows="2" class="form-control" placeholder="Bagikan pengalaman atau dukungan, tanpa memberikan diagnosis..." style="margin-bottom:10px;"></textarea>
+          <button class="btn-primary" onclick="sendReply()">Kirim balasan</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/core.js"></script>
+  <script src="js/komunitas.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konsultasi — Med-all</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <main>
+    <section id="view-konsultasi" class="page-view active">
+      <div class="container">
+        <div class="breadcrumb" onclick="navigateTo('beranda')">‹ Beranda / Konsultasi / Dokter & ahli</div>
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:14px;">
+          <div>
+            <span class="eyebrow">KONSULTASI / DOKTER & AHLI</span>
+            <h1 class="section-title">Temukan teman bicara yang tepat.</h1>
+            <p style="color:var(--text-secondary);">Pilih tenaga profesional, lihat pengalaman dan jadwalnya, lalu atur konsultasi sesuai kebutuhanmu.</p>
+          </div>
+          <button class="btn-primary" onclick="navigateTo('konsultasi-saya')">Jadwal & riwayat konsultasi</button>
+        </div>
+
+        <div class="filter-pills">
+          <button class="pill-btn active" onclick="filterDoctors(this, 'Semua')">Semua</button>
+          <button class="pill-btn" onclick="filterDoctors(this, 'Dokter umum')">Dokter umum</button>
+          <button class="pill-btn" onclick="filterDoctors(this, 'Ahli gizi')">Ahli gizi</button>
+          <button class="pill-btn" onclick="filterDoctors(this, 'Psikolog')">Psikolog</button>
+          <button class="pill-btn" onclick="filterDoctors(this, 'Dokter anak')">Dokter anak</button>
+        </div>
+
+        <div class="articles-grid" id="doctorGrid">
+          <div class="card doctor-card" data-spec="Dokter umum">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=80" alt="dr. Maya Putri">
+            <span class="eyebrow">DOKTER UMUM</span>
+            <h3>dr. Maya Putri</h3>
+            <p class="article-meta">8 tahun pengalaman · Bahasa Indonesia</p>
+            <p style="font-size:0.84rem; color:var(--brand-olive); margin:8px 0;">Jadwal: Kamis, 29 Okt · 10.00 WIB</p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+              <strong>Rp75.000</strong>
+              <button class="btn-outline" onclick="openDoctorProfile('dr. Maya Putri', 'Dokter umum · 8 tahun pengalaman', 'Rp75.000', 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=80')">Lihat profil</button>
+            </div>
+          </div>
+
+          <div class="card doctor-card" data-spec="Dokter umum">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=700&q=80" alt="dr. Bima Saputra">
+            <span class="eyebrow">DOKTER UMUM</span>
+            <h3>dr. Bima Saputra</h3>
+            <p class="article-meta">10 tahun pengalaman · Bahasa Indonesia</p>
+            <p style="font-size:0.84rem; color:var(--brand-olive); margin:8px 0;">Jadwal: Kamis, 29 Okt · 13.00 WIB</p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+              <strong>Rp85.000</strong>
+              <button class="btn-outline" onclick="openDoctorProfile('dr. Bima Saputra', 'Dokter umum · 10 tahun pengalaman', 'Rp85.000', 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=700&q=80')">Lihat profil</button>
+            </div>
+          </div>
+
+          <div class="card doctor-card" data-spec="Ahli gizi">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=700&q=80" alt="Nisa Aulia">
+            <span class="eyebrow">AHLI GIZI</span>
+            <h3>Nisa Aulia, S.Gz.</h3>
+            <p class="article-meta">6 tahun pengalaman · Bahasa Indonesia</p>
+            <p style="font-size:0.84rem; color:var(--brand-olive); margin:8px 0;">Jadwal: Kamis, 29 Okt · 14.00 WIB</p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+              <strong>Rp100.000</strong>
+              <button class="btn-outline" onclick="openDoctorProfile('Nisa Aulia, S.Gz.', 'Ahli gizi · 6 tahun pengalaman', 'Rp100.000', 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=700&q=80')">Lihat profil</button>
+            </div>
+          </div>
+
+          <div class="card doctor-card" data-spec="Psikolog">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80" alt="Ratih Sari">
+            <span class="eyebrow">PSIKOLOG KLINIS</span>
+            <h3>Ratih Sari, M.Psi.</h3>
+            <p class="article-meta">7 tahun pengalaman · Bahasa Indonesia</p>
+            <p style="font-size:0.84rem; color:var(--brand-olive); margin:8px 0;">Jadwal: Jumat, 30 Okt · 09.00 WIB</p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+              <strong>Rp180.000</strong>
+              <button class="btn-outline" onclick="openDoctorProfile('Ratih Sari, M.Psi.', 'Psikolog klinis · 7 tahun pengalaman', 'Rp180.000', 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80')">Lihat profil</button>
+            </div>
+          </div>
+
+          <div class="card doctor-card" data-spec="Dokter anak">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=700&q=80" alt="dr. Aditya">
+            <span class="eyebrow">DOKTER ANAK</span>
+            <h3>dr. Aditya, Sp.A</h3>
+            <p class="article-meta">12 tahun pengalaman · Bahasa Indonesia</p>
+            <p style="font-size:0.84rem; color:var(--brand-olive); margin:8px 0;">Jadwal: Jumat, 30 Okt · 11.00 WIB</p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+              <strong>Rp150.000</strong>
+              <button class="btn-outline" onclick="openDoctorProfile('dr. Aditya, Sp.A', 'Dokter anak · 12 tahun pengalaman', 'Rp150.000', 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=700&q=80')">Lihat profil</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-profil-dokter" class="page-view">
+      <div class="container" style="max-width: 820px;">
+        <div class="breadcrumb" onclick="navigateTo('konsultasi')">‹ Kembali ke Daftar dokter & ahli</div>
+        <span class="eyebrow">KONSULTASI / PROFIL DOKTER</span>
+        <h1 class="section-title">Kenali dokter pilihanmu.</h1>
+
+        <div class="two-col-section" style="margin-top:20px; align-items:start;">
+          <div class="card">
+            <img id="docProfileImg" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=80" alt="Dokter" style="width:160px; height:180px; object-fit:cover; border-radius:20px; margin-bottom:14px;">
+            <span class="eyebrow">PROFIL DEMO</span>
+            <h2 id="docProfileName" style="font-size:1.6rem;">dr. Maya Putri</h2>
+            <p id="docProfileMeta" style="color:var(--text-secondary); margin-bottom:12px;">Dokter umum · 8 tahun pengalaman</p>
+            <p style="font-size:0.92rem; color:var(--text-secondary);">
+              Membantu pasien memahami keluhan sehari-hari dan membangun kebiasaan pencegahan yang realistis dengan bahasa yang mudah dipahami.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="eyebrow">PILIH JADWAL KONSULTASI</span>
+            <h3 style="font-size:1.4rem; margin-bottom:10px;">Ada waktu untukmu.</h3>
+            <p class="article-meta" style="margin-bottom:12px;">Chat online · 30 menit · WIB</p>
+
+            <div class="filter-pills" style="margin:8px 0 14px;">
+              <button class="pill-btn active" onclick="pickSlot(this)">Kam, 29 Okt</button>
+              <button class="pill-btn" onclick="pickSlot(this)">Jum, 30 Okt</button>
+              <button class="pill-btn" onclick="pickSlot(this)">Sab, 31 Okt</button>
+            </div>
+
+            <div class="filter-pills" style="margin:8px 0 18px;">
+              <button class="pill-btn" onclick="pickTime(this)">09.00</button>
+              <button class="pill-btn active" onclick="pickTime(this)">10.00</button>
+              <button class="pill-btn" onclick="pickTime(this)">11.00</button>
+              <button class="pill-btn" onclick="pickTime(this)">14.00</button>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; margin-bottom:16px; padding-top:12px; border-top:1px solid var(--border-soft);">
+              <span style="color:var(--text-secondary);">Biaya konsultasi</span>
+              <strong id="docProfileFee">Rp75.000</strong>
+            </div>
+
+            <button class="btn-primary" style="width:100%;" onclick="confirmBooking()">Konfirmasi janji konsultasi →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-konsultasi-saya" class="page-view">
+      <div class="container" style="max-width: 820px;">
+        <div class="breadcrumb" onclick="navigateTo('konsultasi')">‹ Konsultasi / Jadwal dan riwayat</div>
+        <h1 class="section-title">Dukunganmu, tersimpan rapi.</h1>
+        <p style="color:var(--text-secondary); margin-bottom:20px;">Lihat janji berikutnya dan ringkasan konsultasi sebelumnya secara pribadi.</p>
+
+        <h2 style="font-size:1.35rem; margin-bottom:12px;">Akan datang</h2>
+        <div class="card" style="margin-bottom:26px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <span class="eyebrow" style="margin:0;">MED-291026-014</span>
+            <span style="background:var(--brand-green); color:#fff; padding:4px 12px; border-radius:99px; font-size:0.78rem; font-weight:600;">Terkonfirmasi</span>
+          </div>
+          <div class="doctor-mini-row">
+            <img class="doctor-avatar" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80" alt="dr. Maya Putri">
+            <div>
+              <strong id="bookedDocName">dr. Maya Putri</strong>
+              <div style="font-size:0.84rem; color:var(--text-secondary);">Kamis, 29 Oktober 2026 · <span id="bookedTime">10.00</span> WIB · Chat online</div>
+              <div style="font-size:0.84rem; font-weight:600; margin-top:4px;"><span id="bookedFee">Rp75.000</span> · Lunas</div>
+            </div>
+          </div>
+        </div>
+
+        <h2 style="font-size:1.35rem; margin-bottom:12px;">Riwayat konsultasi</h2>
+        <div class="card">
+          <span class="eyebrow">SELESAI · MED-121026-006</span>
+          <h3 style="font-size:1.25rem; margin-bottom:4px;">dr. Maya Putri · Dokter umum</h3>
+          <p class="article-meta">12 Oktober 2026 · Membahas kebiasaan istirahat dan aktivitas harian.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/core.js"></script>
+  <script src="js/konsultasi.js"></script>
+</body>
+</html>

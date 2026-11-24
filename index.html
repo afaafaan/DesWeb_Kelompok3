@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Med-all — Langkah kecil, hidup lebih sehat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <main>
+    <section id="view-beranda" class="page-view active">
+      <div class="hero-wrapper">
+        <div class="container">
+          <div class="greeting-banner" id="greetingBadge">
+            Halo, Sobat Sehat — Selamat datang di ruang sehatmu
+          </div>
+
+          <div class="hero-grid">
+            <div>
+              <span class="eyebrow">UNTUK HIDUP YANG LEBIH SEIMBANG</span>
+              <h1 class="hero-title">Langkah kecil, hidup lebih sehat.</h1>
+              <p class="hero-desc">
+                Kenali tubuhmu, temukan informasi tepercaya, dan terhubung dengan bantuan yang tepat. Bersama Med-all, sehat terasa lebih dekat.
+              </p>
+
+              <div class="hero-cta-row">
+                <button class="btn-primary" onclick="navigateTo('konsultasi')">Temukan dokter ↗</button>
+                <button class="btn-outline" onclick="navigateTo('artikel')">Jelajahi artikel</button>
+              </div>
+
+              <div class="quick-feature-grid">
+                <div class="quick-box" onclick="navigateTo('cek-gejala')">
+                  <div class="quick-box-title">Cek gejala <span>→</span></div>
+                  <div class="quick-box-sub">Kenali keluhanmu</div>
+                </div>
+                <div class="quick-box" onclick="navigateTo('med-ask')">
+                  <div class="quick-box-title">Med Ask AI <span>→</span></div>
+                  <div class="quick-box-sub">Tanya soal sehat</div>
+                </div>
+              </div>
+
+              <p class="hero-trust-note">Ditinjau tenaga medis. Berpihak pada kamu.</p>
+            </div>
+
+            <div class="hero-visual-col">
+              <img class="hero-arch-img"
+                   src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=900&q=80"
+                   alt="Berjalan santai di taman hijau">
+              <div class="hero-quote-card">
+                <div>
+                  <span class="eyebrow" style="margin-bottom:2px;">SEDIKIT DEMI SEDIKIT</span>
+                  <div style="font-size:0.9rem; font-weight:500;">Kebiasaan baik tumbuh setiap hari.</div>
+                </div>
+              </div>
+              <ul class="hero-checklist">
+                <li>✓ Informasi yang bisa dipahami</li>
+                <li>✓ Dukungan tanpa menghakimi</li>
+                <li>✓ Privasi dalam kendalimu</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container section-block">
+        <span class="eyebrow">BACA, PAHAMI, TERAPKAN</span>
+        <h2 class="section-title">Bekal sehat untuk keseharian.</h2>
+
+        <div class="articles-grid">
+          <article class="article-card" onclick="navigateTo('detail-artikel')">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Isi piring seimbang">
+            <span class="eyebrow">NUTRISI</span>
+            <h3>Isi piring seimbang, tanpa harus sempurna</h3>
+            <p class="article-meta">6 menit baca · Ditinjau dokter</p>
+          </article>
+
+          <article class="article-card" onclick="navigateTo('detail-artikel')">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80" alt="Jalan kaki 30 menit">
+            <span class="eyebrow">KEBUGARAN</span>
+            <h3>Jalan kaki 30 menit: mulai dari ritmemu</h3>
+            <p class="article-meta">5 menit baca · 22 Oktober 2026</p>
+          </article>
+
+          <article class="article-card" onclick="navigateTo('detail-artikel')">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Memberi jeda untuk pikiran">
+            <span class="eyebrow">KESEHATAN MENTAL</span>
+            <h3>Memberi jeda untuk pikiran yang penuh</h3>
+            <p class="article-meta">7 menit baca · 20 Oktober 2026</p>
+          </article>
+        </div>
+
+        <div style="margin-top: 22px;">
+          <button class="btn-outline" onclick="navigateTo('artikel')">Jelajahi semua artikel ↗</button>
+        </div>
+      </div>
+
+      <div class="container section-block" style="padding-top: 10px;">
+        <div class="two-col-section">
+          <div>
+            <span class="eyebrow">TAK PERLU MENCARI JAWABAN SENDIRI</span>
+            <h2 class="section-title">Ada dukungan di setiap langkah.</h2>
+            <div class="card" style="margin-top: 16px;">
+              <span class="eyebrow">KONSULTASI PROFESIONAL</span>
+              <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Ruang bicara dengan ahlinya.</h3>
+              <p style="font-size: 0.92rem; color: var(--text-secondary);">
+                Temukan dokter dan ahli sesuai kebutuhan, pilih jadwal, lalu konsultasikan keluhanmu secara pribadi.
+              </p>
+
+              <div class="doctor-mini-row">
+                <img class="doctor-avatar" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80" alt="dr. Maya Putri">
+                <div>
+                  <strong>dr. Maya Putri</strong>
+                  <div style="font-size: 0.83rem; color: var(--text-secondary);">Dokter umum · 8 tahun pengalaman</div>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Klinik Tunas Sehat · Profil demo</div>
+                </div>
+              </div>
+
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                <div>
+                  <div style="font-size: 0.82rem; color: var(--text-muted);">Chat 30 menit · Jadwal tersedia</div>
+                  <strong>Rp75.000</strong>
+                </div>
+                <button class="btn-outline" onclick="navigateTo('konsultasi')">Temukan dokter & ahli ↗</button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <span class="eyebrow">TUMBUH BERSAMA</span>
+            <h2 class="section-title">Cerita kecil, dukungan yang berarti.</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 16px;">
+              Berbagi pengalaman tentang makan, bergerak, beristirahat, dan merawat keluarga. Karena perjalanan sehat tidak harus sendirian.
+            </p>
+            <button class="btn-outline" onclick="navigateTo('komunitas')" style="margin-bottom: 16px;">Jelajahi komunitas ↗</button>
+
+            <div class="card">
+              <div class="thread-preview" onclick="navigateTo('detail-thread')">
+                <span class="eyebrow" style="margin-bottom:2px;">KEBIASAAN SEHAT</span>
+                <h4>Mulai jalan pagi 15 menit, siapa mau ikut?</h4>
+                <span class="article-meta">Rani · 12 balasan · 2 jam lalu</span>
+              </div>
+              <div class="thread-preview" onclick="navigateTo('detail-thread')">
+                <span class="eyebrow" style="margin-bottom:2px;">NUTRISI</span>
+                <h4>Ide bekal sederhana untuk hari yang sibuk</h4>
+                <span class="article-meta">Dimas · 8 balasan · 4 jam lalu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container section-block" style="padding-top: 10px;">
+        <span class="eyebrow">DIBANGUN DENGAN KEPEDULIAN</span>
+        <h2 class="section-title">Tenang, kamu berada di ruang yang aman.</h2>
+
+        <div class="pillars-grid">
+          <div class="card">
+            <h3 style="font-size:1.25rem; margin-bottom:6px;">Ditulis dengan teliti</h3>
+            <p style="font-size:0.9rem; color:var(--text-secondary);">Artikel ditinjau tenaga medis dan dilengkapi sumber yang bisa ditelusuri.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size:1.25rem; margin-bottom:6px;">Privasi jadi prioritas</h3>
+            <p style="font-size:0.9rem; color:var(--text-secondary);">Konsultasi pribadi dan ruang diskusi yang menjaga data sensitifmu.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size:1.25rem; margin-bottom:6px;">Bantuan yang manusiawi</h3>
+            <p style="font-size:0.9rem; color:var(--text-secondary);">Teknologi mendukung, bukan menggantikan hubungan dengan tenaga kesehatan.</p>
+          </div>
+        </div>
+
+        <div class="card-beige" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:18px;">
+          <div>
+            <h3 style="font-size:1.6rem; margin-bottom:6px;">Satu langkah baik bisa dimulai hari ini.</h3>
+            <p style="color:var(--text-secondary); font-size:0.94rem;">Baca artikel, konsultasikan kebutuhanmu, atau berbagi cerita dengan komunitas.</p>
+          </div>
+          <button class="btn-primary" onclick="navigateTo('artikel')">Jelajahi artikel ↗</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/core.js"></script>
+</body>
+</html>

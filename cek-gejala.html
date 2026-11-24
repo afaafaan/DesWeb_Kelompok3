@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cek Gejala — Med-all</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <main>
+    <section id="view-cek-gejala" class="page-view active">
+      <div class="container" style="max-width: 680px;">
+        <div class="breadcrumb" onclick="navigateTo('beranda')">‹ Beranda / Cek gejala</div>
+        <span class="eyebrow">CEK GEJALA · 1 DARI 2</span>
+        <h1 class="section-title">Apa yang kamu rasakan?</h1>
+        <p style="color:var(--text-secondary); margin-bottom:18px;">Kenali keluhanmu dan temukan langkah berikutnya. Bukan pengganti diagnosis dokter.</p>
+
+        <div class="card-warn" style="margin-bottom:20px;">
+          <strong>Butuh pertolongan segera?</strong>
+          <p>Sesak berat, nyeri dada, atau penurunan kesadaran? Segera ke IGD. Jangan menunggu hasil cek.</p>
+        </div>
+
+        <div class="card">
+          <div class="form-group">
+            <label class="form-label">Keluhan utama</label>
+            <input type="text" id="symptomInput" class="form-control" value="Sakit kepala" placeholder="Contoh: Sakit kepala, batuk ringan, lelah...">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Sejak kapan keluhan terasa?</label>
+            <select id="symptomDuration" class="form-control">
+              <option>Sejak pagi ini · kurang dari 1 hari</option>
+              <option>Sudah 2–3 hari terakhir</option>
+              <option>Lebih dari 1 minggu</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Seberapa mengganggu?</label>
+            <div class="severity-grid">
+              <button type="button" class="sev-btn active" onclick="pickSeverity(this, 'Ringan')">Ringan</button>
+              <button type="button" class="sev-btn" onclick="pickSeverity(this, 'Sedang')">Sedang</button>
+              <button type="button" class="sev-btn" onclick="pickSeverity(this, 'Berat')">Berat</button>
+            </div>
+          </div>
+
+          <button class="btn-primary" style="width:100%; margin-top:8px;" onclick="showSymptomSummary()">Lihat ringkasan gejala →</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-ringkasan-gejala" class="page-view">
+      <div class="container" style="max-width: 680px;">
+        <div class="breadcrumb" onclick="navigateTo('cek-gejala')">‹ Ubah keluhan</div>
+        <span class="eyebrow">CEK GEJALA · 2 DARI 2</span>
+        <h1 class="section-title">Dengarkan tubuhmu, ambil langkah tepat.</h1>
+        <p class="article-meta" style="margin-bottom:16px;">Ringkasan awal, bukan diagnosis medis.</p>
+
+        <div class="card-beige" style="margin-bottom:20px;">
+          <span class="eyebrow">KELUHAN YANG KAMU CERITAKAN</span>
+          <h2 id="summarySymptomTitle" style="font-size:1.7rem; margin-bottom:4px;">Sakit kepala</h2>
+          <p id="summarySymptomMeta" class="article-meta">Ringan · Sejak pagi ini · kurang dari 1 hari</p>
+        </div>
+
+        <h3 style="font-size:1.3rem; margin-bottom:8px;">Yang bisa kamu lakukan</h3>
+        <ol style="padding-left:20px; color:var(--text-secondary); margin-bottom:18px; line-height:1.8;">
+          <li>Istirahat dan minum air putih secara teratur.</li>
+          <li>Catat kapan keluhan muncul atau memburuk.</li>
+          <li>Hubungi dokter bila keluhan menetap atau memburuk.</li>
+        </ol>
+
+        <div class="card-warn" style="margin-bottom:20px;">
+          <strong>Jangan tunda mencari bantuan</strong>
+          <p>Segera ke IGD jika gejala mendadak sangat hebat, disertai kelemahan tubuh, kebingungan, atau penurunan kesadaran.</p>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:12px;">
+          <button class="btn-primary" onclick="saveSymptomToDashboard()">Simpan & buka dashboard</button>
+          <button class="btn-outline" onclick="navigateTo('konsultasi')">Temukan dokter →</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/core.js"></script>
+  <script src="js/cek-gejala.js"></script>
+</body>
+</html>

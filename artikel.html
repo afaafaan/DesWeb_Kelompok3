@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artikel — Med-all</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <main>
+    <section id="view-artikel" class="page-view active">
+      <div class="container">
+        <div class="breadcrumb" onclick="navigateTo('beranda')">‹ Beranda / Artikel kesehatan</div>
+        <span class="eyebrow">ARTIKEL KESEHATAN</span>
+        <h1 class="section-title">Pengetahuan baik untuk hidup yang lebih sehat.</h1>
+        <p style="color:var(--text-secondary); max-width:620px; margin-bottom:18px;">
+          Bacaan yang dekat dengan keseharian, ditinjau tenaga medis dan ditulis agar mudah dipahami.
+        </p>
+
+        <input type="text" class="form-control" id="articleSearch" placeholder="Cari topik, gejala, atau kebiasaan sehat..." onkeyup="filterArticles()" style="max-width:480px;">
+
+        <div class="filter-pills">
+          <button class="pill-btn active" onclick="selectCategory(this, 'Semua')">Semua artikel</button>
+          <button class="pill-btn" onclick="selectCategory(this, 'Nutrisi')">Nutrisi</button>
+          <button class="pill-btn" onclick="selectCategory(this, 'Kebugaran')">Kebugaran</button>
+          <button class="pill-btn" onclick="selectCategory(this, 'Kesehatan mental')">Kesehatan mental</button>
+          <button class="pill-btn" onclick="selectCategory(this, 'Keluarga')">Keluarga</button>
+        </div>
+
+        <div class="card-beige" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:22px; align-items:center; margin-bottom:32px;">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80" alt="Isi piring seimbang" style="width:100%; height:230px; object-fit:cover; border-radius:18px;">
+          <div>
+            <span class="eyebrow">PILIHAN REDAKSI · NUTRISI</span>
+            <h2 style="font-size:1.7rem; margin-bottom:10px;">Isi piring seimbang, tanpa harus sempurna</h2>
+            <p style="color:var(--text-secondary); font-size:0.94rem; margin-bottom:12px;">
+              Karbohidrat, protein, sayur, dan buah: cara sederhana menyusun menu yang realistis setiap hari.
+            </p>
+            <p class="article-meta" style="margin-bottom:16px;">dr. Ayu Larasati · 24 Oktober 2026 · 6 menit baca</p>
+            <button class="btn-primary" onclick="navigateTo('detail-artikel')">Baca artikel ↗</button>
+          </div>
+        </div>
+
+        <h2 style="font-size:1.5rem; margin-bottom:6px;">Jelajahi bacaan terbaru</h2>
+        <div class="articles-grid" id="articleListGrid">
+          <article class="article-card" data-cat="Nutrisi" onclick="navigateTo('detail-artikel')">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Serat">
+            <span class="eyebrow">NUTRISI</span>
+            <h3>Mengenal serat dan manfaatnya bagi pencernaan</h3>
+            <p class="article-meta">23 Oktober · 5 menit baca · Ditinjau tenaga medis</p>
+          </article>
+          <article class="article-card" data-cat="Kebugaran" onclick="navigateTo('detail-artikel')">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80" alt="Jalan kaki">
+            <span class="eyebrow">KEBUGARAN</span>
+            <h3>Jalan kaki 30 menit: mulai dari ritmemu</h3>
+            <p class="article-meta">22 Oktober · 5 menit baca · Ditinjau tenaga medis</p>
+          </article>
+          <article class="article-card" data-cat="Kesehatan mental" onclick="navigateTo('detail-artikel')">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Jeda pikiran">
+            <span class="eyebrow">KESEHATAN MENTAL</span>
+            <h3>Memberi jeda untuk pikiran yang penuh</h3>
+            <p class="article-meta">20 Oktober · 7 menit baca · Ditinjau tenaga medis</p>
+          </article>
+          <article class="article-card" data-cat="Keluarga" onclick="navigateTo('detail-artikel')">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80" alt="Keluarga">
+            <span class="eyebrow">KELUARGA</span>
+            <h3>Membangun rutinitas sehat bersama anak</h3>
+            <p class="article-meta">19 Oktober · 6 menit baca · Ditinjau tenaga medis</p>
+          </article>
+          <article class="article-card" data-cat="Nutrisi" onclick="navigateTo('detail-artikel')">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=800&q=80" alt="Minum air">
+            <span class="eyebrow">NUTRISI</span>
+            <h3>Minum cukup tanpa menunggu haus</h3>
+            <p class="article-meta">17 Oktober · 4 menit baca · Ditinjau tenaga medis</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-detail-artikel" class="page-view">
+      <div class="container" style="max-width: 780px;">
+        <div class="breadcrumb" onclick="navigateTo('artikel')">‹ Kembali ke Artikel kesehatan</div>
+        <span class="eyebrow">ARTIKEL / NUTRISI</span>
+        <h1 class="section-title">Isi piring seimbang, tanpa harus sempurna</h1>
+        <p style="color:var(--text-secondary); margin-bottom:10px;">
+          Panduan praktis menyusun makanan yang beragam, cukup, dan sesuai keseharianmu.
+        </p>
+        <p class="article-meta" style="margin-bottom:18px;">
+          <strong>Ditulis oleh dr. Ayu Larasati · Ditinjau oleh dr. Maya Putri</strong><br>
+          Diperbarui 24 Oktober 2026 · 6 menit baca · Tinjauan medis
+        </p>
+
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1000&q=80" alt="Isi piring seimbang" style="width:100%; max-height:360px; object-fit:cover; border-radius:20px; margin-bottom:24px;">
+
+        <div style="display:flex; flex-direction:column; gap:18px; font-size:1rem;">
+          <p>Makan sehat tidak harus rumit, mahal, atau selalu sempurna. Yang lebih penting adalah pola makan beragam yang bisa kamu lakukan secara konsisten, bukan satu menu yang dianggap paling benar.</p>
+          <h2 style="font-size:1.5rem;">Apa itu piring seimbang?</h2>
+          <p>Isi Piringku adalah panduan visual untuk membantu mengatur porsi makan. Secara umum, setengah piring berisi sayuran dan buah, sementara setengah lainnya berisi makanan pokok dan lauk sumber protein. Lengkapi dengan air putih dan kebiasaan hidup aktif.</p>
+          <div class="card-sage">
+            <strong>ℹ Bukan aturan kaku</strong>
+            <p style="font-size:0.9rem; color:var(--text-secondary); margin-top:4px;">Ukuran porsi menyesuaikan usia, aktivitas, kondisi kesehatan, dan kebutuhan energi. Tidak ada satu piring yang cocok untuk semua orang.</p>
+          </div>
+          <h2 style="font-size:1.5rem;">Contoh menu sehari-hari</h2>
+          <p>Untuk makan siang, coba nasi, ikan panggang atau tempe, sayur bening bayam, dan potongan pepaya. Jika tidak sempat memasak, tambahkan satu porsi sayur pada makanan yang dibeli dan pilih air putih sebagai minuman.</p>
+          <h2 style="font-size:1.5rem;">Sumber bacaan</h2>
+          <p class="article-meta">1. Kementerian Kesehatan RI. Pedoman Gizi Seimbang dan Isi Piringku. 2. World Health Organization. Healthy diet, 2024.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/core.js"></script>
+  <script src="js/artikel.js"></script>
+</body>
+</html>
